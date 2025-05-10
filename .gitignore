@@ -1,0 +1,5 @@
+*.vscode*
+*.elf
+*.bin
+*.map
+*.o
