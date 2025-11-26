@@ -22,4 +22,4 @@ plt.title('')
 plt.legend()
 
 plt.grid(False)
-plt.show()
+plt.show() # Plot 1
