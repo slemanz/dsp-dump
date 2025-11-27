@@ -23,3 +23,9 @@ converter.Thus, there is a need for an interface between the analog signal and
 the digital signal processor.
 
 ![](basic.svg)
+
+---
+
+See: [Analog to Digital Conversion](../analog_to_digital/)
+
+---
