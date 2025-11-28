@@ -4,3 +4,7 @@
 
 **Example:**
 
+Consider the following Analog signal
+
+![](analog.png)
+
