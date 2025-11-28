@@ -57,3 +57,34 @@ plt.xticks([0, 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10])
 plt.yticks([0.0, 0.1 , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 
 plt.show()
+
+# Quantization
+
+plt.figure(figsize=(12,9))
+plt.title("Quantization", fontsize=28)
+
+plt.rcParams['xtick.labelsize'] = 25
+plt.rcParams['ytick.labelsize'] = 25
+
+plt.plot(t,x, linewidth =3)
+markerline, stemlines, baseline = plt.stem(n, x)
+plt.setp(stemlines, 'linewidth', 3)
+
+plt.xlabel('n' , fontsize = 25)
+plt.ylabel('Range of Quantizer', fontsize = 25)
+
+plt.axis([-0.1,10.1,0,1])
+plt.xticks([0, 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10])
+plt.yticks([0.0, 0.1 , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+plt.axhline(y = 0.1, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.2, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.3, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.4, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.5, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.6, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.7, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.8, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 0.9, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+plt.axhline(y = 1.0, xmin = 0, xmax = 10, color = 'r', linewidth = 3.0)
+
+plt.show()
