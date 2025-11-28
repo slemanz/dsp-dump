@@ -26,5 +26,34 @@ plt.axis([-0.1,10.1,0,1])
 plt.xticks([0, 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10])
 plt.yticks([0.0, 0.1 , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 
+plt.show()
+
+
+# Sampling and Plotting of Sampled signal
+plt.figure(figsize=(12,9))
+plt.title("Sampling", fontsize=28)
+
+plt.rcParams['xtick.labelsize'] = 25
+plt.rcParams['ytick.labelsize'] = 25
+
+n = t
+plt.plot(t,x, linewidth =3, label = 'x(t) = (0.85)^t')
+
+plt.axis([-0.1, 10.1, 0, 1])
+plt.xticks([0, 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10])
+plt.yticks([0.0, 0.1 , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+
+markerline, stemlines, baseline = plt.stem(n, x, label='x(n) = (0.85)^n')
+plt.setp(stemlines, 'linewidth', 3)
+
+plt.xlabel('n' , fontsize = 25)
+plt.ylabel('amplitude', fontsize = 25)
+
+plt.axis([-0.1,10.1,0,1])
+plt.legend(fontsize = 28)
+plt.axis([-0.1,10.1,0,1])
+
+plt.xticks([0, 1 , 2, 3, 4, 5, 6, 7, 8, 9, 10])
+plt.yticks([0.0, 0.1 , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 
 plt.show()
