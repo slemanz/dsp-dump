@@ -150,3 +150,64 @@ plt.legend(fontsize = 20)
 
 plt.show()
 
+# Generation of Ramp signal
+
+x = []
+t = []
+
+for i in range(0,10):
+    t.append(i)
+    x.append(i)
+
+plt.figure(figsize = (18,8)) # set the size of figure
+plt.title('Ramp Signal', fontsize=28)
+
+plt.plot(t, x, linewidth=3, label='Ramp function')
+
+plt.ylim(0,len(x))
+plt.xlim(0,len(t)-1)
+plt.xlabel('time.', fontsize = 15)
+plt.ylabel('Amplitude', fontsize = 15)
+
+plt.legend(fontsize = 20)
+
+plt.show()
+
+# Generation of Sine wave
+
+t = np.linspace(0, 10, 100)
+amp = 5 # amplitude
+f = 50  # frequency
+x = amp * np.sin(2 * np.pi * f * t)
+
+plt.figure(figsize = (15,8)) # set the size of figure
+plt.title('Sine wave Signal', fontsize=28)
+
+plt.plot(t,x,linewidth = 3, label = 'SineWave')
+
+plt.xlim(0,10)
+plt.ylim(-5,5)
+plt.xlabel('time.', fontsize = 15)
+plt.ylabel('Amplitude', fontsize = 15)
+
+plt.legend(fontsize = 20)
+
+plt.show()
+
+# Generation of exponential Signal
+
+t = np.linspace(0,10,100)
+amp = 1
+x = amp * np.exp(-t)
+
+plt.figure(figsize = (15,8)) # set the size of figure
+plt.title('Exponential Signal', fontsize=28)
+
+plt.plot(t,x,linewidth = 3, label = 'Exponential Signal')
+plt.xlim(0, 5)
+plt.ylim(0, 1)
+plt.xlabel('time.', fontsize = 15)
+plt.ylabel('Amplitude', fontsize = 15)
+plt.legend(fontsize=20)
+
+plt.show()
