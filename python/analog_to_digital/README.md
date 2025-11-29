@@ -37,7 +37,7 @@ $x(n)$ is the discrete time signal with sampling interval of 1s.
 
 **Quantization:**
 
-uantization is the process of converting the amplitude of discrete signal into
+Quantization is the process of converting the amplitude of discrete signal into
 a digital signal by expressing each sample value as a finite (instead of infinite)
 number of digits.
 
