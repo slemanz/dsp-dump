@@ -91,7 +91,44 @@ $u(t) = 0$, for $t \lt 0$
 
 ### Time Shifted Step
 
-<div align="center">  
-  <img width="49%" height="195px" src="signals/unit_impulse_delay.png" /> 
-  <img width="49%" height="195px" src="signals/unit_impulse_advance.png" />
-</div>
+![](signals/unit_step_delay.png)
+![](signals/unit_step_advance.png)
+
+### Unit Ramp Signal
+
+The ramp function is a uniformly increasing time domain signal of a constant
+slope. The ramp function is described as a function having a magnitude of $t$ at
+$t \geq 0$.
+
+$x(t) = t$, for $t \geq 0$
+
+and
+
+$x(t) = 0$, for $t \lt 0$.
+
+![](signals/ramp.png)
+
+### Sinusoidal signal
+
+A sinusoidal signal consists of an oscillations that repeat over a fixed interval of
+time called time period of the signal. A sinusoidal signal for $t \gt 0$ is given by
+$x(t) = Asin(2\pi ft)$
+
+where,
+
+$A$ = Amplitude of the signal.
+$f$ = Frequency of the signal.
+
+![](signals/sine_wave.png)
+
+### Unit Exponential signal
+
+The unit exponential function is described as has a magnitude of 1 at time zero
+and exponentially decaying for time greater than zero. An exponential signal
+for $t \gt 0$ is given by
+
+$x(t) = 1$, for $t = 0$
+
+and
+
+$x(t) = e^{-t}$, for $t \gt 0$
