@@ -145,7 +145,7 @@ and
 
 $\delta (t) = 0$, for $t \neq 0$
 
-![](discrete/unit_impulse.py)
+![](discrete/unit_impulse.png)
 
 ### Time shifted impulse
 
@@ -158,7 +158,7 @@ units then the equation of impulse becomes.
 
 $\delta (t - 2) = 1$
 
-![](discrete/unit_impulse_delay.py)
+![](discrete/unit_impulse_delay.png)
 
 2. Time advance: In time advance, we move the signal towards left side of the
 zero i.e towards negative time axis. If we advance the signal towards left by
@@ -166,4 +166,24 @@ two units then the equation of impulse becomes
 
 $\delta (t+ 2) = 1$
 
-![](discrete/unit_impulse_advance.py)
+![](discrete/unit_impulse_advance.png)
+
+### Unit Step signal
+
+The unit step signal, denoted by u(t), is described as a function having magnitude of 1 at time equal to and greater than zero.
+
+$u(t) = 1$, for $t \geq 0$
+
+and
+
+$u(t) = 0$, for $t \lt 0$
+
+![](discrete/unit_step.png)
+
+### Time shifted steр (delay)
+
+![](discrete/unit_step_delay.png)
+
+### Time shifted steр (advance)
+
+![](discrete/unit_step_advance.png)
