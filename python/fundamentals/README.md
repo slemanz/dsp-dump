@@ -132,3 +132,38 @@ $x(t) = 1$, for $t = 0$
 and
 
 $x(t) = e^{-t}$, for $t \gt 0$
+
+## Fundamental Discrete time signal
+
+### Unit Impulse signal
+
+Unit impulse signal, denoted by $\delta (t)$, is given by
+
+$\delta (t) = 1$ for $t=0$
+
+and
+
+$\delta (t) = 0$, for $t \neq 0$
+
+![](discrete/unit_impulse.py)
+
+### Time shifted impulse
+
+Impulse signal is one at $t = 0$, however, we can shift the signal on both sides of
+zero. There are two kinds of time shifting.
+
+1. Time delay:  In time delay, we move the signal towards right side of the zero
+i.e towards positive time axis. If we delay the signal towards right by two
+units then the equation of impulse becomes.
+
+$\delta (t - 2) = 1$
+
+![](discrete/unit_impulse_delay.py)
+
+2. Time advance: In time advance, we move the signal towards left side of the
+zero i.e towards negative time axis. If we advance the signal towards left by
+two units then the equation of impulse becomes
+
+$\delta (t+ 2) = 1$
+
+![](discrete/unit_impulse_advance.py)
