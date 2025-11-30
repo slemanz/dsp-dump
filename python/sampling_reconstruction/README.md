@@ -30,3 +30,9 @@ after sampling.
 
 **Sampling a Sine wave of Fmax = 20Hz with fs = 35 Hz:**
 
+![](less_than.png)
+
+**Sampling a Sine wave of Fmax = 20Hz with fs = 50 Hz:**
+
+![](greater_than.png)
+
