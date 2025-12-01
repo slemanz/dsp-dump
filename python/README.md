@@ -29,8 +29,8 @@ growth and advancement in signal processing techniques.
 
 1. [Fundamentals of signal processing](fundamentals/)
 2. [Analog to digital conversion](analog_to_digital/)
-3. [Sampling and Reconstruction](sampling_reconstruction)
-4. Nyquist Theorem
+3. [Sampling and Reconstruction](sampling_reconstruction/)
+4. [Nyquist Theorem](nyquist/)
 5. Convolution
 6. Signal denoising
 7. Fourier transform
