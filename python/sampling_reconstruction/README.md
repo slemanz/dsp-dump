@@ -39,3 +39,7 @@ after sampling.
 **Sampling Frequency five times greater than the maximum frequency (fs > 5fmax):**
 
 ![](greater_than_5x.png)
+
+**Sampling and reconstruction of sum of two sine waves:**
+
+![](sum_sine.png)
