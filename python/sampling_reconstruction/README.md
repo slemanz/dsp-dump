@@ -36,3 +36,6 @@ after sampling.
 
 ![](greater_than.png)
 
+**Sampling Frequency five times greater than the maximum frequency (fs > 5fmax):**
+
+![](greater_than_5x.png)
