@@ -15,3 +15,5 @@ Sequential representation of discrete time signal is shown below
 $$x(n) = [2,1,-2,-2,3,2,2,-1,1]$$
 
 ## Graphical Representation of discrete time signal
+
+![](graphical.png)
