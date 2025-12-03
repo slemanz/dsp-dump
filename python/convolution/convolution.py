@@ -76,3 +76,28 @@ plt.setp(stemlines, 'linewidth', 3)
 plt.legend(fontsize = 30)
 
 plt.show()
+
+# Convolution by for loops
+
+convres = np.zeros(nconv)
+for k in range(0, nconv):
+    convres[k] = np.sum(f_x2 * data_4_conv[k:k+nx2])
+
+plt.figure(figsize = (20,8)) # set the size of figure
+plt.suptitle('Convolution of X1 and X2', fontsize = 30)
+
+markerline, stemlines, baseline = plt.stem(convres)
+plt.setp(stemlines, 'linewidth', 3) 
+plt.show()
+
+# Convolution by np.convolve using mode = "full"
+
+plt.figure(figsize=(16,9)) # set the size of figure
+plt.suptitle('Convolution of X1 and X2', fontsize=30)
+
+plt.plot(convres,'g^' ,markersize=20, label='Conv using for loop')
+plt.plot(np.convolve(x1, x2, mode='full'), 'r-', linewidth =3, label='Conv by np.convolve')
+plt.xlabel('Sample', fontsize=15)
+plt.ylabel('Value', fontsize=15)
+plt.legend(fontsize=15)
+plt.show()
