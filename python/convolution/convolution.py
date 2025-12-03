@@ -59,3 +59,20 @@ plt.xticks([-2, -1, 0])
 plt.yticks([0, 1, 2, 3])
 
 plt.show()
+
+# Calculating convolution for mode = 'full'
+
+nx1 = len(x1)
+nx2 = len(x2)
+nconv = nx1 + nx2 - 1
+
+half_nx2 = int(np.round(nx2/2)) # Expanding x1 by zero padding
+data_4_conv = np.concatenate((np.zeros(half_nx2),  x1, np.zeros(half_nx2)), axis=0) # zero padding on both sides of x1
+
+plt.figure(figsize=(16,9)) # set the size of figure
+
+markerline, stemlines, baseline = plt.stem(data_4_conv, label = 'data_4_conv')
+plt.setp(stemlines, 'linewidth', 3) 
+plt.legend(fontsize = 30)
+
+plt.show()
