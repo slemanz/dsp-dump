@@ -16,7 +16,7 @@ $$x(n) = [2,1,-2,-2,3,2,2,-1,1]$$
 
 ## Graphical Representation of discrete time signal
 
-![](graphical.png)
+![](plots/graphical.png)
 
 ## The Convolution Sum
 
@@ -41,3 +41,9 @@ $y(n) = \sum_{k=0}^{N-1} x_1(k)x_2(n-k)$
 $x_2(n)$ is called kernel or filter.
 
 ## Example
+
+![](plots/conv_sum.png)
+
+**The output sequence:**
+
+![](plots/mode_full.png)
