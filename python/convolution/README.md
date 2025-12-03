@@ -47,3 +47,13 @@ $x_2(n)$ is called kernel or filter.
 **The output sequence:**
 
 ![](plots/mode_full.png)
+
+## Convolution for mode = “full"
+
+The number of samples in first signal = $nx_1 = 5$
+
+The number of samples in the kernel = $nx_2 = 3$
+
+Number of samples in output sequence = nconv = $nx_1 + nx_2 - 1 = 5 + 3 - 1 = 7$
+
+## More Examples
