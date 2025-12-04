@@ -101,3 +101,14 @@ plt.xlabel('Sample', fontsize=15)
 plt.ylabel('Value', fontsize=15)
 plt.legend(fontsize=15)
 plt.show()
+
+# Convolution by np.convolve using mode = "same"
+
+plt.figure(figsize = (16, 9)) # set the size of figure
+plt.suptitle('Convolution of X1 and X2, mode = same', fontsize = 30)
+
+plt.plot(np.convolve(x1, x2, mode='same'), 'r-', linewidth=3, label='Conv by np.convolve')
+plt.xlabel('Sample', fontsize=15)
+plt.ylabel('Value', fontsize=15)
+plt.legend(fontsize = 15)
+plt.show()
