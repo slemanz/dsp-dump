@@ -56,4 +56,19 @@ The number of samples in the kernel = $nx_2 = 3$
 
 Number of samples in output sequence = nconv = $nx_1 + nx_2 - 1 = 5 + 3 - 1 = 7$
 
-## More Examples
+### More Examples in Python
+
+**Convolution by for loops:**
+
+![](plots/for_loop.png)
+
+**Convolution by np.convolve using mode="full":**
+
+![](plots/conv_full.png)
+
+**Convolution by np.convolve using mode="same":**
+
+![](plots/conv_same.png)
+
+## Aplications
+
