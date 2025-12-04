@@ -28,3 +28,24 @@ plt.figure(figsize=(16, 9))
 plt.plot(t, noisy_signal, label='Noisy Signal')
 plt.legend(fontsize=15)
 plt.show()
+
+# select filter for denoising
+filter = 2*np.ones(50)/10 # moving avarage filter
+
+# filtering by convolution
+filtered_singal = np.convolve(noisy_signal, filter, mode='same')
+
+# plotting filtered signal
+
+plt.figure(figsize=(16, 9))
+plt.plot(filtered_singal, label='Filtered Signal')
+plt.legend(fontsize=15)
+plt.show()
+
+# Plotting Noisy signal and filtered signal
+plt.figure(figsize=(16, 9))
+plt.plot(noisy_signal, 'g', label='Noisy Signal')
+plt.plot(filtered_singal, 'r', label='Filtered Signal')
+plt.legend(fontsize=15)
+plt.title('Signal Denoising', fontsize=20)
+plt.show()
