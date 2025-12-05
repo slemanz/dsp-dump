@@ -72,3 +72,12 @@ Number of samples in output sequence = nconv = $nx_1 + nx_2 - 1 = 5 + 3 - 1 = 7$
 
 ## Aplications
 
+### Denoising
+
+[Code](denoising.py)
+
+![](plots/denoising_1.png)
+
+![](plots/denoising_2.png)
+
+![](plots/denoising_3.png)
