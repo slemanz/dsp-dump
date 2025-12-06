@@ -81,3 +81,15 @@ Number of samples in output sequence = nconv = $nx_1 + nx_2 - 1 = 5 + 3 - 1 = 7$
 ![](plots/denoising_2.png)
 
 ![](plots/denoising_3.png)
+
+### Edge Detection Using Convolution
+
+[Code](edge.py)
+
+![](plots/edge.png)
+
+![](plots/edge_kernel.png)
+
+![](plots/edge_filtered.png)
+
+![](plots/edge_detection.png)
