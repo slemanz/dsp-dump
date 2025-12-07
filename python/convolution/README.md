@@ -93,3 +93,7 @@ Number of samples in output sequence = nconv = $nx_1 + nx_2 - 1 = 5 + 3 - 1 = 7$
 ![](plots/edge_filtered.png)
 
 ![](plots/edge_detection.png)
+
+## The Convolution Theorem
+
+
