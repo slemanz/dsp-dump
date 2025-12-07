@@ -96,4 +96,14 @@ Number of samples in output sequence = nconv = $nx_1 + nx_2 - 1 = 5 + 3 - 1 = 7$
 
 ## The Convolution Theorem
 
+In mathematics, the convolution theorem states that under suitable conditions
+the Fourier transform of a convolution of two functions (or signals) is the
+product of their Fourier transforms. More generally, convolution in one domain
+(e.g., time domain) equals point-wise multiplication in the other domain (e.g.,
+frequency domain). Other versions of the convolution theorem are applicable to
+various Fourier-related transforms.
+
+[Code](theorem.py)
+
+![](plots/theorem.png)
 
