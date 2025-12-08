@@ -12,3 +12,9 @@ $$y[10] = \dfrac{y[8]+y[9]+y[10]+y[11+y[12]]}{5}$$
 The other possibility is
 
 $$y[10] = \dfrac{y[10]+y[11]+y[12]+y[13+y[14]]}{5}$$
+
+[Code](moving_average.py)
+
+![](plots/moving_noise.png)
+
+![](plots/moving_filter.png)
