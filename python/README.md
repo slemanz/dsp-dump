@@ -32,6 +32,6 @@ growth and advancement in signal processing techniques.
 3. [Sampling and Reconstruction](sampling_reconstruction/)
 4. [Nyquist Theorem](nyquist/)
 5. [Convolution](convolution/)
-6. Signal denoising
+6. [Signal denoising](denoising/)
 7. Fourier transform
 8. Designing of FIR and IIR filters
