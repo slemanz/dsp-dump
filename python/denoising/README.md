@@ -18,3 +18,11 @@ $$y[10] = \dfrac{y[10]+y[11]+y[12]+y[13+y[14]]}{5}$$
 ![](plots/moving_noise.png)
 
 ![](plots/moving_filter.png)
+
+## Gaussian Average or Gaussian Mean Filter
+
+$$ GaussianFilter = e^{\frac{-4ln(2)t^2}{(f\omega h m)^2}} $$
+
+Where $f\omega hm$ is an important parameter of Gaussian and is called full width
+half maximum. The spread of the Gaussian depends upon this parameter. It is
+approximately 2.4 times the standard deviation.
