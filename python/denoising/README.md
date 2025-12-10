@@ -79,3 +79,9 @@ median = 7
 Median filter is a nonlinear filter. It works by moving through the noisy signal
 and replacing each data point of the noisy signal with median values of the
 neighbouring data points.
+
+[code](median.py)
+
+![](plots/median_noise.png)
+
+![](plots/median_filter.png)
