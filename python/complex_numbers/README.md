@@ -31,3 +31,10 @@ $$z = x +yj$$
 [Code](complex_mag.py)
 
 ![](complex_mag.png)
+
+## Generation of a complex sine wave
+
+[Code](complex_sine.py)
+
+![](complex_sine.png)
+
