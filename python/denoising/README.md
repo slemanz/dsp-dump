@@ -85,3 +85,17 @@ neighbouring data points.
 ![](plots/median_noise.png)
 
 ![](plots/median_filter.png)
+
+**Spikes With median filter**
+
+[code](spikes.py)
+
+![](plots/spikes.png)
+
+Hist:
+
+![](plots/spike_hist.png)
+
+Filtered:
+
+![](plots/spike_filtered.png)
