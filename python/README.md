@@ -34,5 +34,5 @@ growth and advancement in signal processing techniques.
 5. [Convolution](convolution/)
 6. [Signal denoising](denoising/)
 7. [Complex Numbers](complex_numbers/)
-8. Fourier transform
+8. [Fourier transform](fourier/)
 9. Designing of FIR and IIR filters
