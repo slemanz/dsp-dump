@@ -28,7 +28,15 @@ weekly published magazine because the newspaper is published more frequently.
 
 ## Sine Waves
 
+[Code](sine_wave.py)
+
+![](plots/sine.png)
+
 ## Cossines Waves
+
+[Code](cosine_wave.py)
+
+![](plots/cosine.png)
 
 ## Sine and Cossine
 
