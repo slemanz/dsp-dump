@@ -52,6 +52,10 @@ weekly published magazine because the newspaper is published more frequently.
 
 ## Signal with frequencies 10, 25, 50 and 100 Hz
 
+[Code](freq_wave.py)
+
+![](plots/freq_wave.png)
+
 ## Procedure of Fourier Transform
 
 Jean Baptiste Fourier, a French physicist, discovered that any periodic waveform
