@@ -46,6 +46,10 @@ weekly published magazine because the newspaper is published more frequently.
 
 ## Sine, Cossine and DC
 
+[Code](sine_cosine.py)
+
+![](plots/sine_cosine_dc.png)
+
 ## Signal with frequencies 10, 25, 50 and 100 Hz
 
 ## Procedure of Fourier Transform
