@@ -72,3 +72,5 @@ using dot product.
 
 ![](plots/signal_model.png)
 
+![](plots/signal_transform.png)
+
