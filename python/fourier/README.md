@@ -66,3 +66,9 @@ If our signal has N data points, we select the the sine waves with atleast
 N different frequencies and then we find the similarities with the signal
 using dot product.
 
+## Step by Step coding for Fourier transform
+
+[Code](fourier_code.py)
+
+![](plots/signal_model.png)
+
