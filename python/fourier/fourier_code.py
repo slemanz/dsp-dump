@@ -36,5 +36,32 @@ plt.ylabel('amplitude', fontsize=15)
 plt.title('Signal Modelling With Complex Sine Wave',fontsize=20)
 plt.xlim([0,1])
 
-plt.legend(fontsize=15)
+plt.legend(fontsize=15, loc="lower left")
+plt.show()
+
+# Plotting the Signal and its Fourier Transform
+
+plt.rcParams['xtick.labelsize'] = 15
+plt.rcParams['ytick.labelsize'] = 15
+plt.figure(figsize=(16, 9)) # set the size of figure
+plt.suptitle('Signal and its Fourier transform', fontsize = 30)
+
+plt.subplot(2,1,1) 
+plt.plot(t,x,linewidth = 3) 
+plt.title("Signal of amplitude '3' and frequency '5 Hz'", fontsize = 20)
+plt.xlabel('time in sec', fontsize=15)
+plt.ylabel('Amplitude', fontsize=15)
+
+plt.subplot(2,1,2)
+markerline, stemlines, baseline = plt.stem(amps)
+plt.setp(stemlines, 'linewidth', 3)
+plt.title(" Fourier transform of a signal", fontsize=20)
+plt.xlabel('Indices', fontsize=15)
+plt.ylabel('Amplitude', fontsize=15)
+
+# The frequency spectrum of a real valued signal is always symmetric. Since the
+# symmetric part is exactly a mirror image of  the first part, it provides no
+# additional information.
+
+plt.tight_layout() # prevent overlap
 plt.show()
