@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import style
+import math
 
 # Generating  the signal
 
@@ -62,6 +63,67 @@ plt.ylabel('Amplitude', fontsize=15)
 # The frequency spectrum of a real valued signal is always symmetric. Since the
 # symmetric part is exactly a mirror image of  the first part, it provides no
 # additional information.
+
+plt.tight_layout() # prevent overlap
+plt.show()
+
+# Correcting the amplitudes and converting indices to frequencies
+
+srate  = 256 # Hz
+t      = np.arange(0.,1.,1/srate)  # time vector in seconds
+amp    = 3
+f      = 5 #Hz
+x      = amp*np.sin(2*np.pi*f*t) # Signal
+
+
+# Initializing Fourier Coefficients
+X   = np.zeros(len(x), dtype=complex)
+
+for freq in range(0, len(t)):
+    # create complex sine wave and compute dot product with signal
+    csw = np.exp( -1j*2*np.pi*freq*t )
+    X[freq] = np.sum( np.multiply(x,csw) )
+
+
+# extract amplitudes
+amps = 2 * np.abs(X)/len(t)
+
+# In the above line of code we multiplt by 2 to incorporate the negative frequecies of complex sinusoidal
+
+# converitng indices to frequency
+
+# There are 0 to 255 indices at which we generate the sine wave . These are frequency indices
+# not the frequency in hertz. Since we have n=256 indices including zero, therefore after (n/2) i.e 128 in
+# this case, we get the negative waveforms of the first 128 samples. It means after n=128,
+# the frequencies are violating the Nyquist criteria.
+# Thus in order to convert indices into hertz we need (n/2+1) or (n/2) linearly spaced samples between zero and
+# Nyquist (srate/2) as shown below
+
+Nyquist = srate/2
+
+Hz = np.linspace(0, Nyquist, math.floor(len(t)/2 + 1))
+
+# Plotting the Signal and its Fourier Transform
+
+plt.rcParams['xtick.labelsize'] = 15
+plt.rcParams['ytick.labelsize'] = 15
+plt.figure(figsize=(16, 9)) # set the size of figure
+plt.suptitle('Signal and its Fourier transform', fontsize = 30)
+
+plt.subplot(2, 1, 1) 
+plt.plot(t,x,linewidth = 3) 
+plt.title("Signal of amplitude '3' and frequency '5 Hz'", fontsize = 25)
+plt.xlabel('time in sec', fontsize = 20)
+plt.ylabel('Amplitude', fontsize = 20)
+
+plt.subplot(2,1,2)
+markerline, stemlines, baseline = plt.stem(Hz, amps[range(0,len(Hz))])
+plt.setp(stemlines, 'linewidth', 3)
+plt.xlim(0,10)
+plt.ylim(0,5)
+plt.title(" Fourier transform of a signal", fontsize = 25)
+plt.xlabel('Frequency in Hz', fontsize = 20)
+plt.ylabel('Amplitude', fontsize = 20)
 
 plt.tight_layout() # prevent overlap
 plt.show()
