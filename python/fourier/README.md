@@ -74,3 +74,7 @@ using dot product.
 
 ![](plots/signal_transform.png)
 
+**Fourier Transform of signal with amplitude '3' and frequency '5'**
+
+![](plots/fourier_5hz.png)
+
