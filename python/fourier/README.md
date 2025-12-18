@@ -78,3 +78,6 @@ using dot product.
 
 ![](plots/fourier_5hz.png)
 
+**Fourier transform of a signal with multiple frequencies**
+
+![](plots/fourier_freqs.png)
