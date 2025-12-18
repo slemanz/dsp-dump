@@ -127,3 +127,59 @@ plt.ylabel('Amplitude', fontsize = 20)
 
 plt.tight_layout() # prevent overlap
 plt.show()
+
+# Fourier transform of a signal with multiple frequencies
+
+srate = 256  # Hz
+Nyquist = srate / 2
+t = np.arange(0., 1., 1/srate) # time vector in seconds
+
+x1 = 5*np.sin(2*np.pi*2*t) # First sinewave
+x2 = 2*np.sin(2*np.pi*4*t) # Second sinewave
+x3 = 7*np.sin(2*np.pi*6*t) # Third sinewave
+
+x = x1 + x2 + x3           # Combined sinewave
+
+
+# Initializing Fourier Coefficients
+X   = np.zeros(len(x),dtype=complex)
+
+for freq in range(0, len(t)):
+    # create complex sine wave and compute dot product with signal
+    csw = np.exp( -1j*2*np.pi*freq*t )
+    X[freq] = np.sum( np.multiply(x,csw) )
+
+
+# extract amplitudes
+amps = 2 * np.abs(X)/ len(t)
+# In the above line of code we multiplt by 2 to incorporate the negative frequecies of complex sinusoidal
+
+# converitng indices to frequency
+Nyquist = srate/2
+Hz = np.linspace(0, Nyquist, math.floor(len(t)/2)+1)
+
+# Plotting
+
+plt.figure(figsize=(16, 9)) # set the size of figure
+plt.suptitle('Signal and its Fourier transform', fontsize = 30)
+style.use('dark_background')
+plt.rcParams['xtick.labelsize'] = 15
+plt.rcParams['ytick.labelsize'] = 15
+
+plt.subplot(2,1,1) 
+plt.plot(t,x,linewidth = 3) 
+plt.title("Signal with frequencies 2, 4 and 6 Hz", fontsize = 25)
+plt.xlabel('time in sec', fontsize = 20)
+plt.ylabel('Amplitude', fontsize = 20)
+
+plt.subplot(2,1,2)
+markerline, stemlines, baseline = plt.stem(Hz, amps[range(0, len(Hz))])
+plt.setp(stemlines, 'linewidth', 5)
+plt.xlim(0,10)
+plt.ylim(0,8)
+plt.title(" Fourier transform of a signal", fontsize = 25)
+plt.xlabel('Frequency in Hz', fontsize = 20)
+plt.ylabel('Amplitude', fontsize = 20)
+
+plt.tight_layout()
+plt.show()
