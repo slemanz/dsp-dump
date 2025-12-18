@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import style
 import math
+import scipy
 
 # Generating  the signal
 
@@ -179,6 +180,47 @@ plt.xlim(0,10)
 plt.ylim(0,8)
 plt.title(" Fourier transform of a signal", fontsize = 25)
 plt.xlabel('Frequency in Hz', fontsize = 20)
+plt.ylabel('Amplitude', fontsize = 20)
+
+plt.tight_layout()
+plt.show()
+
+# Fourier transform of a signal with sine, cosine and a DC Component
+
+srate = 256  # Hz
+t = np.arange(0.,1.,1/srate) # time vector in seconds
+
+x1 = 5 * np.sin(2 * np.pi * 10 * t) #   sinewave
+x2 = 3 * np.cos(2 * np.pi * 20 * t) # Cosinewave
+x3 = x1 + x2  # sum of sine and cosine
+
+DC = 2
+
+x = DC + x1 + x2 # sum of sine, cosine and DC.
+
+# Calculating Fourier Coefficients
+
+X = scipy.fft.fft(x)/len(t)
+X = np.abs(X)
+
+# Plotting Signal and its Fourier Transform
+
+plt.figure(figsize=(16, 9)) # set the size of figure
+plt.suptitle('Signal and its Fourier transform', fontsize = 30)
+
+plt.subplot(2,1,1) 
+plt.plot(t,x,linewidth = 3) 
+plt.title("Signal with sine, cosine and dc component", fontsize = 25)
+plt.xlabel('time in sec', fontsize = 20)
+plt.ylabel('Amplitude', fontsize = 20)
+
+plt.subplot(2,1,2)
+
+markerline, stemlines, baseline = plt.stem(X)
+plt.setp(stemlines, 'linewidth', 5)
+#plt.xlim(-.1,10)
+plt.title("Symmetric Fourier transform of a signal", fontsize = 25)
+plt.xlabel('Frequency Indices', fontsize = 20)
 plt.ylabel('Amplitude', fontsize = 20)
 
 plt.tight_layout()
