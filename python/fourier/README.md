@@ -81,3 +81,8 @@ using dot product.
 **Fourier transform of a signal with multiple frequencies**
 
 ![](plots/fourier_freqs.png)
+
+**Fourier transform of a signal with sine, cosine and a DC Component**
+
+![](plots/fourier_dc.png)
+
