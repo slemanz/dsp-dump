@@ -90,3 +90,19 @@ using dot product.
 
 ![](plots/amplitude_power.png)
 
+## Inverse Fourier transform
+
+The Inverse Fourier Transform (IFT) is the mathematical process of converting a
+signal from the frequency domain (spectrum) back to the time domain,
+reconstructing the original signal from its constituent frequencies. It
+essentially reverses the Fourier Transform (FT), using an integral to combine
+complex sinusoids (based on the frequency components) to rebuild the signal's
+waveform over time, with a key difference being a positive exponential term and
+a scaling factor (often $\frac{1}{2}\pi$ ) compared to the FT's negative exponential. 
+
+[Code](inverse_fourier.py)
+
+![](plots/inverse_original.png)
+
+![](plots/inverse_reconstructed.png)
+
