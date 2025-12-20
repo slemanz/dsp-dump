@@ -86,3 +86,7 @@ using dot product.
 
 ![](plots/fourier_dc.png)
 
+**Amplitude and Power spectrum**
+
+![](plots/amplitude_power.png)
+
