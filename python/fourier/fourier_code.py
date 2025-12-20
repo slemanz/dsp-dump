@@ -225,3 +225,50 @@ plt.ylabel('Amplitude', fontsize = 20)
 
 plt.tight_layout()
 plt.show()
+
+
+
+# Amplitude and Power spectrum
+
+srate = 256  # Hz
+t = np.arange(0., 1., 1/srate) # time vector in seconds
+
+x1 = 0.5*np.sin(2*np.pi*2*t) # First sinewave
+x2 = 2*np.sin(2*np.pi*4*t) # Second sinewave
+x3 = 3*np.sin(2*np.pi*6*t) # Third sinewave
+x = x1 + x2 + x3   # Combined sinewave
+
+X =  np.abs(scipy.fft.fft(x)/len(t))
+
+# converitng indices to frequency
+
+Nyquist = srate/2
+Hz = np.linspace(0, Nyquist, math.floor(len(t)/2)+1)
+X[1:len(Hz)] = 2*X[1:len(Hz)] # Amplitude Correction
+
+# Power Spectrum of a Signal
+
+X_Power = X**2
+
+# Plotting
+
+plt.figure(figsize=(16,9)) # set the size of figure
+plt.suptitle('Signal and its Fourier transform', fontsize=30)
+
+plt.subplot(2,1,1) 
+plt.plot(t,x,linewidth = 3) 
+plt.title("Signal With frequencies of 2, 4 and 6Hz", fontsize=25)
+plt.xlabel('time in sec', fontsize=20)
+plt.ylabel('Amplitude', fontsize=20)
+
+plt.subplot(2,1,2)
+plt.plot(Hz,X[range(0,len(Hz))],'ys-',linewidth=3, label='Amplitude Spectrum')
+plt.plot(Hz,X_Power[range(0,len(Hz))],'ms-',linewidth=3, label='Power Spectrum')
+plt.xlim([0,10])
+plt.xlabel('Frequency in Hz', fontsize=20)
+plt.ylabel('Power', fontsize=20)
+plt.title("Amplitude and Power spectrum of Signal", fontsize=25)
+plt.legend(fontsize=20)
+
+plt.tight_layout()
+plt.show()
