@@ -106,3 +106,8 @@ a scaling factor (often $\frac{1}{2}\pi$ ) compared to the FT's negative exponen
 
 ![](plots/inverse_reconstructed.png)
 
+## Application of Fourier transform
+
+### Stationarity of a signal
+
+![](plots/stationarity.png)
