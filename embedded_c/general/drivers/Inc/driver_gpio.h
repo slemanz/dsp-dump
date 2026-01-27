@@ -1,7 +1,7 @@
-#ifndef DRIVER_GPIO_H_
-#define DRIVER_GPIO_H_
+#ifndef INC_GPIO_H_
+#define INC_GPIO_H_
 
-#include "stm32f401xx.h"
+#include "stm32f411xx.h"
 
 /*
  * This is a configuration structure for a GPIO pin
@@ -13,21 +13,11 @@ typedef struct
 	uint8_t GPIO_PinNumber; 	/*!< possible modes from @GPIO_PIN_NUMBER >*/
 	uint8_t GPIO_PinMode;		/*!< possible modes from @GPIO_PIN_MODES >*/
 	uint8_t	GPIO_PinSpeed; 		/*!< possible modes from @GPIO_PIN_SPEED >*/
-	uint8_t GPIO_PinPuPdControl;/*!< possible modes from @GPIO_PIN_PUPD >*/
 	uint8_t GPIO_PinOPType;		/*!< possible modes from @GPIO_PIN_OP_TYPE >*/
+	uint8_t GPIO_PinPuPdControl;/*!< possible modes from @GPIO_PIN_PUPD >*/
 	uint8_t GPIO_PinAltFunMode;	/*!< possible modes from @GPIO_PIN_ >*/
-}GPIO_Config_t;
+}GPIO_PinConfig_t;
 
-
-/*
- * This is a Handle structure for a GPIO pin
- */
-
-typedef struct
-{
-	GPIO_RegDef_t *pGPIOx; /* hold the base address of the GPIO port which the pin belongs */
-	GPIO_Config_t GPIO_Config; /* this holds GPIO pin configuration settings */
-}GPIO_Handle_t;
 
 /*
  * @GPIO_PIN_NUMBER
@@ -112,11 +102,9 @@ typedef struct
 
 // GPIO_PIN_ALTFN_SPECIF_FUNCTION
 
-#define GPIO_NO_ALTFN               0
 #define PA5_ALTFN_TIM2_CH1			GPIO_PIN_ALTFN_1
 #define PA2_ALTFN_UART2_TX			GPIO_PIN_ALTFN_7
 #define PA3_ALTFN_UART2_RX			GPIO_PIN_ALTFN_7
-
 
 
 /********************************************************************************************
@@ -129,19 +117,20 @@ typedef struct
  */
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
-
 /*
  * Init and De-init
  */
-void GPIO_Init(GPIO_Config_t *pGPIOConfig);
+void GPIO_Init(GPIO_PinConfig_t *pGPIOConfig);
+void GPIO_Init_table(const GPIO_PinConfig_t *pGPIOConfig, uint32_t Len);
 void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
-
 
 /*
  * Data read and write
  */
 uint8_t  GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
 void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
 
-#endif
+
+#endif /* INC_GPIO_H_ */

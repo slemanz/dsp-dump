@@ -1,0 +1,19 @@
+{
+	"folders": [
+        {
+            "path": "../app"
+        },
+        {
+            "path": "../drivers"
+        },
+        {
+            "path": "../linkers"
+        }
+    ],
+    "settings": {
+        "C_Cpp.default.includePath": [
+            "${workspaceFolder}/../app/Inc",
+            "${workspaceFolder}/../drivers/Inc",
+        ],
+    }
+}

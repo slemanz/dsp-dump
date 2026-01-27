@@ -1,7 +1,7 @@
 #include <stdint.h>
 
 #define SRAM_START      0x20000000U
-#define SRAM_SIZE       (64 * 1024) // 64K bytes
+#define SRAM_SIZE       (128 * 1024) // 128K bytes
 #define SRAM_END        ((SRAM_START) + (SRAM_SIZE))
 
 #define STACK_START     (SRAM_END)
@@ -228,5 +228,6 @@ void Reset_Handler(void)
     __libc_init_array();
 
     // call main()
+    __asm volatile("MSR MSP, %0": : "r" (STACK_START): ); // stack reset
     main();
 }
