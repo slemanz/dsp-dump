@@ -1,3 +1,4 @@
 # DSP - Embedded C
 
-- CMSIS Version: 1.16.2
+- CMSIS-DSP Version: 1.16.2
+- CMSIS Version: 6.3
