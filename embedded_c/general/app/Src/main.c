@@ -1,31 +1,32 @@
 #include "config.h"
+#include "arm_math.h"
 
-#include "bsp/led.h"
-#include "core/simple-timer.h"
-#include "core/cli.h"
-#include "core/uprint.h"
-#include "shared/pool.h"
+#include "driver_systick.h"
+#include "driver_gpio.h"
+
+#define TEST_LENGTH_SAMPLES 4
 
 int main(void)
 {
     config_app();
 
-    simple_timer_t timer_blinky;
-    simple_timer_setup(&timer_blinky, 500, true);
+    float32_t srcA[TEST_LENGTH_SAMPLES] = {1.0, 2.0, 3.0, 4.0};
+    float32_t srcB[TEST_LENGTH_SAMPLES] = {5.0, 6.0, 7.0, 8.0};
+    float32_t dst[TEST_LENGTH_SAMPLES];
+    uint32_t blockSize = TEST_LENGTH_SAMPLES;
 
-    uprint("Init the board!\r\n");
-
-    ledPtr_t led1 = led_getByUuid(1);
-    ledPtr_t led2 = led_getByUuid(2);
+    // Perform optimized addition: dst = srcA + srcB
+    arm_add_f32(srcA, srcB, dst, blockSize);
+    (void)dst;
+    
+    uint64_t start_time = ticks_get();
 
     while(1)
     {
-        if(simple_timer_has_elapsed(&timer_blinky))
+        if((ticks_get() - start_time) >= 500)
         {
-            led_toggle(led1);
-            led_toggle(led2);
+            GPIO_ToggleOutputPin(GPIOA, GPIO_PIN_NO_5);
+            start_time = ticks_get();
         }
-
-        cli_update();
     }
 }
