@@ -1,25 +1,29 @@
 {
 	"folders": [
         {
+            "name": "app",
             "path": "../example-app"
         },
         {
+            "name": "drivers",
             "path": "../general/drivers"
         },
         {
+            "name": "linkers",
             "path": "../general/linkers"
         },
         {
+            "name": "lib",
             "path": "../lib"
         },
     ],
     "settings": {
         "C_Cpp.default.includePath": [
-            "${workspaceFolder}/../example-app/Inc",
-            "${workspaceFolder}/../general/drivers/Inc",
-            "${workspaceFolder}/../lib/CMSIS-DSP/Include",
-            "${workspaceFolder}/../lib/CMSIS-DSP/PrivateInclude",
-            "${workspaceFolder}/../lib/CMSIS_6/CMSIS/Core/Include",
+            "${workspaceFolder:app}/Inc",
+            "${workspaceFolder:drivers}/Inc",
+            "${workspaceFolder:lib}/CMSIS-DSP/Include",
+            "${workspaceFolder:lib}/CMSIS-DSP/PrivateInclude",
+            "${workspaceFolder:lib}/CMSIS_6/CMSIS/Core/Include",
         ],
     }
 }
