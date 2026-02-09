@@ -13,10 +13,10 @@ MAP_FILE= -Wl,-Map=$(BUILD_DIR)/$(TARGET).map
 
 CMSIS_DSP_LIB = -L $(LIB_DIR)/build -l CMSISDSP
 
-CFLAGS= -c $(MACH) -mthumb $(FLOAT) -std=gnu99 -Wall -O0 -g \
+CFLAGS= -c $(MACH) -mthumb $(FLOAT) -std=gnu99 -Wall -O0 -g3 \
 		--specs=nano.specs -ffunction-sections -fdata-sections
 
-LDFLAGS = $(MACH) -mthumb $(FLOAT) --specs=nosys.specs $(LINKER) $(MAP_FILE) -g \
+LDFLAGS = $(MACH) -mthumb $(FLOAT) --specs=nosys.specs $(LINKER) $(MAP_FILE) -g3 \
 			-Wl,--gc-sections -static --specs=nano.specs -Wl,--start-group -lc -lm \
 			-Wl,--end-group -u _printf_float -Wl,--print-memory-usage
 
