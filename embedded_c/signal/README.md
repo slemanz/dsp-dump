@@ -50,3 +50,4 @@ $$ \sigma = \sqrt{\dfrac{(x_0 - \mu)^2 + (x_1 - \mu)^2 + ... + (x_N - \mu)^2}{N-
 - The **variance** is computed by squaring the standard deviation $\mu^2$
 
 $$ \mu^2 = \dfrac{1}{N}\sum^{N-1}_{i=0} (x_i - \mu)^2 $$
+

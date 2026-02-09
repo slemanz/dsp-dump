@@ -30,6 +30,8 @@ void config_drivers(void)
     UART_Init_table(UART_ConfigTable, (sizeof(UART_ConfigTable)/sizeof(UART_ConfigTable[0])));
     systick_init(1000);
     fpu_enable();
+
+    UART_PeripheralControl(UART2, ENABLE);
 }
 
 /************************************************************
@@ -40,4 +42,12 @@ void config_drivers(void)
 void config_app(void)
 {
     config_drivers();
+}
+
+// printf retarget
+extern int __io_putchar(int ch)
+{
+    uint8_t ch_send = (uint8_t)ch;
+    UART_write(UART2, &ch_send, 1);
+    return ch;
 }

@@ -18,7 +18,7 @@ CFLAGS= -c $(MACH) -mthumb $(FLOAT) -std=gnu99 -Wall -O0 -g \
 
 LDFLAGS = $(MACH) -mthumb $(FLOAT) --specs=nosys.specs $(LINKER) $(MAP_FILE) -g \
 			-Wl,--gc-sections -static --specs=nano.specs -Wl,--start-group -lc -lm \
-			-Wl,--end-group -Wl,--print-memory-usage
+			-Wl,--end-group -u _printf_float -Wl,--print-memory-usage
 
 LDFLAGS += -Wl,--no-warn-rwx-segments
 
@@ -43,6 +43,8 @@ OBJS		+= $(BUILD_DIR)/main.o
 OBJS		+= $(BUILD_DIR)/config.o
 OBJS		+= $(BUILD_DIR)/syscalls.o
 OBJS		+= $(BUILD_DIR)/startup.o
+
+OBJS		+= $(BUILD_DIR)/signals.o
 
 DRIVERS		+= $(BUILD_DIR)/driver_clock.o
 DRIVERS		+= $(BUILD_DIR)/driver_systick.o
