@@ -51,3 +51,32 @@ $$ \sigma = \sqrt{\dfrac{(x_0 - \mu)^2 + (x_1 - \mu)^2 + ... + (x_N - \mu)^2}{N-
 
 $$ \mu^2 = \dfrac{1}{N}\sum^{N-1}_{i=0} (x_i - \mu)^2 $$
 
+### Application
+
+**[Source code](Src/main.c)**
+
+The mean:
+
+```C
+float32_t signal_mean(float32_t *sig_src_arr, uint32_t sig_length);
+arm_mean_f32(sig_src_arr, sig_length, &g_mean_value); // cmsis
+```
+
+- **Identifying DC Offset:** Most real-world sensors (like microphones or heart
+rate monitors) add a constant electrical voltage to the signal. This "tilt" can
+mess up further calculations. The mean tells you exactly how much to shift the
+signal back to zero.
+
+- **Noise Reduction:** If you have a static signal buried in random white noise,
+the mean of that noise over time is usually zero. By averaging multiple samples,
+the random noise cancels itself out, leaving you with the "true" underlying
+value.
+
+- **Energy Calculations:** To calculate the Variance or Standard Deviation
+(which represents the AC power or "shakiness" of a signal), you must first know
+the mean.
+
+**Note:** The CMSIS version is highly optimized to run faster by using
+hardware-specific instructions.
+
+
