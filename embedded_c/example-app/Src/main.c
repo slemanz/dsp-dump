@@ -53,6 +53,7 @@ static void plot_input_signal(void)
 	for( i = 0; i < HZ_5_SIG_LEN; i++)
 	{
 		g_in_sig_sample = _5hz_signal[i];
+        printf("%f\r\n", g_in_sig_sample);
 		pseudo_dly(9000);
 	}
 }
