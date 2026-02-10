@@ -20,12 +20,16 @@ static void pseudo_dly(int dly);
 
 static float32_t signal_mean(float32_t *sig_src_arr, uint32_t sig_length);
 static float32_t signal_variance(float32_t *sig_src_arr, float32_t sig_mean, uint32_t sig_length);
+static float32_t signal_std(float32_t sig_variance); // std deviation
 
 float32_t g_mean_value;
 float32_t g_mean_value_arm;
 
 float32_t g_variance_value;
 float32_t g_variance_value_arm;
+
+float32_t g_std_value;
+float32_t g_std_value_arm;
 
 int main(void)
 {
@@ -38,6 +42,9 @@ int main(void)
 
     g_variance_value = signal_variance((float32_t *)input_signal_f32_1kHz_15kHz, (float32_t) g_mean_value, (uint32_t) KHZ1_15_SIG_LEN);
     arm_var_f32((float32_t*)input_signal_f32_1kHz_15kHz, (uint32_t)KHZ1_15_SIG_LEN, &g_variance_value_arm);
+
+    g_std_value = signal_std((float32_t)g_variance_value);
+    arm_std_f32((float32_t*)input_signal_f32_1kHz_15kHz, (uint32_t)KHZ1_15_SIG_LEN, &g_std_value_arm);
 
     while(1)
     {
@@ -73,6 +80,13 @@ static float32_t signal_variance(float32_t *sig_src_arr, float32_t sig_mean, uin
     return _variance;
 }
 
+static float32_t signal_std(float32_t sig_variance)
+{
+    float32_t std = sqrt(sig_variance);
+
+    return std;
+}
+
 
 static void plot_input_signal(void)
 {
@@ -89,4 +103,3 @@ static void pseudo_dly(int dly)
 {
 	for( int i = 0; i < dly; i++ ){}
 }
-
