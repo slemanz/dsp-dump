@@ -79,4 +79,28 @@ the mean.
 **Note:** The CMSIS version is highly optimized to run faster by using
 hardware-specific instructions.
 
+The variance:
 
+```C
+float32_t signal_variance(float32_t *sig_src_arr, float32_t sig_mean, uint32_t sig_length);
+arm_var_f32(sig_src_arr, sig_length, &g_variance_value); // cmsis
+```
+
+- **Measuring Signal Power (AC):** Variance represents the average power of the
+AC (varying) part of a signal. In communication systems (like Wi-Fi or Radio),
+engineers need to know how strong the actual data signal is compared to the
+static background.
+
+- **Quantifying Noise (SNR):** Variance is the primary tool for measuring Noise.
+If you have a sensor sitting perfectly still and the reading is "jittery," the
+variance of those readings tells you exactly how "noisy" your sensor is. This is
+crucial for calculating the Signal-to-Noise Ratio (SNR).
+    - Low Variance: Clean signal, very little noise.
+    - High Variance: Corrupted signal, hard to distinguish data from "static."
+
+- **Step Detection and Activity Monitoring:** In wearable devices like a Fitbit,
+variance is used to detect movement.
+    - If you are sitting still, the variance of the accelerometer data is near
+    zero.
+    - When you start walking, the signal starts swinging wildly, causing the
+    variance to spike. This spike triggers the "step counting" algorithm.
