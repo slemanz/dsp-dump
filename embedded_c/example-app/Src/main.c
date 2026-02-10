@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "config.h"
 #include "arm_math.h"
 
@@ -31,7 +32,7 @@ int main(void)
     (void)dst;
     (void)input_signal_f32_1kHz_15kHz;
     
-    uint64_t start_time = ticks_get();
+    //uint64_t start_time = ticks_get();
 
     while(1)
     {
