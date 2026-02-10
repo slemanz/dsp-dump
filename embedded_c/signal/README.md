@@ -104,3 +104,27 @@ variance is used to detect movement.
     zero.
     - When you start walking, the signal starts swinging wildly, causing the
     variance to spike. This spike triggers the "step counting" algorithm.
+
+The Standard Deviation:
+
+```C
+float32_t signal_std(float32_t sig_variance);
+arm_std_f32(sig_src_arr, sig_length, &g_std_value);
+```
+
+- **Defining "Normal" vs. "Anomaly":** In DSP, we often use the 68 − 95 − 99.7 rule.
+    - Roughly 68% of your signal samples will fall within ±1 standard deviation
+    of the mean.
+    - If a new sample comes in that is 3 or 4 standard deviations away, your
+    algorithm can flag it as an anomaly or a "glitch." This is how
+    spike-rejection filters work.
+
+- **Signal-to-Noise Ratio (SNR):** Standard deviation is used to calculate the
+RMS (Root Mean Square) amplitude of noise. When you see a datasheet for a
+high-end ADC (Analog-to-Digital Converter) that says "Low Noise," they are
+usually defining that noise in terms of its standard deviation.
+
+- **Setting Dynamic Range:** If you know the standard deviation of your input
+signal, you can set your gains and thresholds correctly. For example, if you
+know your signal has a $\sigma = 0.5V$, you know that a range of 2V (which is
+$4\sigma$) will capture almost every single peak without clipping.
