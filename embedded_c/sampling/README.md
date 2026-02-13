@@ -80,3 +80,28 @@ Vin o--||--+---o Vout
           GND
 ```
 
+- How does this work?
+    - At high frequency capacitor becomes a short circuit.
+    - At low frequecy capacitor is an open circuit.
+    - $f_c = \dfrac{1}{2\pi RC}$
+
+### Passive vs Active Filters
+
+- Passive filters are made up of passive components only.
+- Examples of passive components include resistors, capacitors and inductors.
+- Active filters are made up of both passive and active components.
+- Examples of active components include operational amplifiers and transistors.
+- One advantage of active filters over passive filters is ther ability to
+provide signal gain (i.e amplify the signal)
+
+**Most common configurations:**
+
+- Analog filters often used in realworld applications include:
+    - Chebyshev
+    - Butterworth
+    - Bessel
+- Each of these filters is designed to optimize a different performance
+parameter.
+- The complexity of each filter can be adjusted by selecting the number of polos
+and zeros.
+- The more poles of in a filter, the more electronics it requires, and the better it performs.
