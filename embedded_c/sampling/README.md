@@ -104,4 +104,32 @@ provide signal gain (i.e amplify the signal)
 parameter.
 - The complexity of each filter can be adjusted by selecting the number of polos
 and zeros.
-- The more poles of in a filter, the more electronics it requires, and the better it performs.
+- The more poles of in a filter, the more electronics it requires, and the
+better it performs.
+
+### Modified Sallen Key Filter
+
+- The modified sallen-key filter servers ad a building block for designing
+active filters such as Chebyshev, butterworth and bessel.
+- $ R = \dfrac{k_1}{Cf_c} $, $ R_f = R_1k_2$
+
+```
+C1
+           +-----||-----+
+           |            |
+       R   |    R       |         |\
+Vin o-/\/\-+---/\/\/-+--+---------|+\
+                     |            |  >---+---o Vout
+                    === C2 +------|-/    |
+                     |     |      |/     <
+                    GND    |             > Rf
+                           |             <
+                           |             |
+                           +-------------+
+                                         |
+                                         <
+                                         > R1
+                                         <
+                                         |
+                                        GND
+```
