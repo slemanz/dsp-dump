@@ -66,6 +66,9 @@ amplitude of the input signal is reduced by 3db.
 
 ### Passive High-Pass Filter
 
+- This filter passs high frquencies and blocks low frequencies.
+- It is constructed using only resistors and capacitors hence RC.
+
 ```
        C
 Vin o--||--+---o Vout
