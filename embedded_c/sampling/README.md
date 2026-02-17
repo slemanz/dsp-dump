@@ -161,3 +161,21 @@ Vin o----/\/\-+---/\/\/-+--+---------|+\           +----/\/\/\---+---/\/\/-+--+-
                                                    |                                                  |                                            |
                                                   GND                                                GND                                          GND
 ```
+
+- The Butterworth filter is designed to have a frequency response as flat as
+possible in the passband.
+
+- Chebyshev filters are designed for the fastest possible transition from the
+passband to the stopband. To achieve this "steep wall," they sacrifice flatness
+in the passband.
+
+- The Bessel filter focuses on the time domain. It is designed to have a linear
+phase response, which means it preserves the shape of filtered signals (like
+square waves or pulses)
+
+| Feature | Butterworth | Chebyshev | Bessel |
+| --- | --- | --- | --- |
+| **Passband Flatness** | Best (Maximally Flat) | Rippled | Fair |
+| **Transition Rate**   | Moderate              | Fastest (Sharpest) |Slowest (Softest) |
+| **Phase Linearity**   | Fair                  | Poor          | Best (Linear) |
+| **Step Response**     | Moderate Ringing      | Heavy Ringing |No Ringing |
