@@ -136,6 +136,10 @@ Vin o-/\/\-+---/\/\/-+--+---------|+\
 
 ### Butterworth, Chebyshev and Bessel filters
 
+A three-stage (3rd order) filter consists of three reactive components (usually
+a combination of resistors and capacitors in active filters) and provides a
+roll-off of 18 dB/octave (or 60dB/decade) beyond the cutoff frequency.
+
 ```
 [STAGE 1: BUTTERWORTH]                             [STAGE 2: CHEBYSHEV]                               [STAGE 3: BESSEL]
                     C1A                                                C1B                                                C1C
